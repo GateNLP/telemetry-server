@@ -24,7 +24,9 @@ def answer_phone_home():
 
 def successful_call(payload: dict):
     """ Successful calls are printed to stdout. """
-    print(json.dumps(payload))
+    print(json.dumps({
+          payload['product']: payload,
+    }))
 
 def valid_payload(payload: dict) -> bool:
     if type(payload) == dict:
