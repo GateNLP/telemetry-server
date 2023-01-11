@@ -5,7 +5,7 @@ Receives calls containing JSON, performs (very) simple validation and prints JSO
 Build the image:
 
 ```
-docker build -t telemetry:latest .
+docker buildx build -t telemetry:latest .
 ```
 
 Launch the image:
