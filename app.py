@@ -1,5 +1,6 @@
 import json
 
+from datetime import datetime
 from flask import request
 from flask_api import FlaskAPI, status
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -25,6 +26,7 @@ def answer_phone_home():
 def successful_call(payload: dict):
     """ Successful calls are printed to stdout. """
     print(json.dumps({
+          '@timestamp': datetime.now().isoformat(),
           payload['product']: payload,
     }))
 
