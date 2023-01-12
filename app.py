@@ -36,6 +36,7 @@ def successful_call(payload: dict):
     print(json.dumps({
           '@timestamp': datetime.now().isoformat(),
           payload['product']: payload,
+          'clientIp': request.remote_addr,
     }))
 
 def valid_payload(payload: dict) -> bool:
