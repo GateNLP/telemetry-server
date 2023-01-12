@@ -33,10 +33,12 @@ def answer_phone_home():
 
 def successful_call(payload: dict):
     """ Successful calls are printed to stdout. """
+    product = payload.pop('product')
     print(json.dumps({
           '@timestamp': datetime.now().isoformat(),
-          payload['product']: payload,
           'clientIp': request.remote_addr,
+          'product': product,
+          product: payload,
     }))
 
 def valid_payload(payload: dict) -> bool:
