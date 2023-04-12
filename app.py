@@ -41,8 +41,8 @@ def successful_call(payload: dict):
           product: payload,
     }))
 
-def valid_payload(payload: dict) -> bool:
-    if type(payload) == dict:
+def valid_payload(payload) -> bool:
+    try:
         return payload.get('product') in VALID_PRODUCT_NAMES
-    else:
+    except:
         return False
