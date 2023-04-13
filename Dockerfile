@@ -1,5 +1,7 @@
 FROM python:3.10-slim-buster
 
+ENV PYTHONUNBUFFERED 1
+
 ARG TARGETARCH
 
 # Install tini and create an unprivileged user
